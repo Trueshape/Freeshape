@@ -1,0 +1,6 @@
+{
+  "name": "Freeshape",
+  "description": "Search, sort, and filter all active free video games, giveaways, loot, DLC, and betas from GamerPower with multiple visual style options.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

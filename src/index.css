@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&family=Share+Tech+Mono&family=Outfit:wght@400;600;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "Share Tech Mono", monospace;
+  --font-outfit: "Outfit", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+}
+
+/* --- Retro VHS 80s & Cyberpunk Custom Animations and Utilities --- */
+
+/* Scanlines Animation */
+@keyframes scanline-anim {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-scanlines {
+  animation: scanline-anim 6s linear infinite;
+}
+
+/* CRT Flicker */
+@keyframes crt-flicker-anim {
+  0% { opacity: 0.96; }
+  45% { opacity: 0.98; }
+  50% { opacity: 0.92; }
+  55% { opacity: 0.99; }
+  100% { opacity: 0.96; }
+}
+
+.animate-crt-flicker {
+  animation: crt-flicker-anim 0.15s infinite;
+}
+
+/* VHS Glitch Noise Overlay */
+@keyframes vhs-glitch-anim {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+    transform: skew(0.3deg);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+    transform: skew(-0.5deg);
+  }
+  40% {
+    clip-path: inset(15% 0 80% 0);
+    transform: skew(0.8deg);
+  }
+  60% {
+    clip-path: inset(80% 0 5% 0);
+    transform: skew(-0.2deg);
+  }
+  80% {
+    clip-path: inset(3% 0 92% 0);
+    transform: skew(0.4deg);
+  }
+  100% {
+    clip-path: inset(40% 0 61% 0);
+    transform: skew(0.3deg);
+  }
+}
+
+.animate-vhs-glitch {
+  animation: vhs-glitch-anim 1s linear infinite alternate-reverse;
+}
+
+/* Neon Text Glow (Cyberpunk / VHS) */
+.neon-glow-pink {
+  text-shadow: 0 0 5px rgba(255, 0, 127, 0.5), 0 0 15px rgba(255, 0, 127, 0.7);
+}
+
+.neon-glow-cyan {
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+/* Retro Grid Background */
+.bg-retro-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 0, 127, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 0, 127, 0.08) 1px, transparent 1px);
+}
+
+.bg-cyber-grid {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+}
+
+/* Custom Scrollbar for Themes */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+/* Custom shadow effects for Retro / Brutalist designs */
+.shadow-brutalist-vhs {
+  box-shadow: 6px 6px 0px #ff007f;
+}
+
+.shadow-brutalist-vhs-hover:hover {
+  box-shadow: 10px 10px 0px #00ffff;
+  transform: translate(-4px, -4px);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.shadow-brutalist-warm {
+  box-shadow: 5px 5px 0px #c2410c;
+}
+
+.shadow-brutalist-warm-hover:hover {
+  box-shadow: 8px 8px 0px #7c2d12;
+  transform: translate(-3px, -3px);
+  transition: all 0.2s ease;
+}
+
+/* VHS static grain overlay */
+.vhs-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+}
